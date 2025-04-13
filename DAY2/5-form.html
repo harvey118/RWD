@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表單</title>
+</head>
+
+<body>
+    <form>
+        <h1>登入畫面</h1>
+        <table border="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td width="100" align="right">帳號:</td>
+                    <td><input type="text" name="acc" placeholder="請輸入帳號" required autocomplete="off"></td>
+                    <!--必填 的元素-required -->
+                    <!--不記憶輸入過的資訊 的元素-autocomplete -->
+                </tr>
+                <tr>
+                    <td width="100" align="right">密碼:</td>
+                    <td><input type="password" name="pwd" placeholder="請輸入密碼" required
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$">
+                        <br><small>密碼至少8個字元，包含大小寫字母和數字</small>
+                        <!--限定樣式 的元素-pattern -->
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">驗證:</td>
+                    <td><input type="number" name="acc" placeholder="請輸入驗證碼" required></td>
+                    <!-- number是只能輸入數字 -->
+                </tr>
+                <tr>
+                    <td width="100" align="right">性別:</td>
+                    <td>
+                        <label><input type="radio" name="gender" value="man">男</label>
+                        <label><input type="radio" name="gender" value="woman">女</label>
+                        <label><input type="radio" name="gender" value="unknown">不提供</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">興趣:</td>
+                    <td>
+                        <label><input type="checkbox" name="interest1" value="game">遊戲</label>
+                        <label><input type="checkbox" name="interest2" value="book">書籍</label>
+                        <label><input type="checkbox" name="interest3" value="sleep">睡覺</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">從何得知:</td>
+                    <td>
+                        <select name="source">
+                            <option value="">請選擇..</option>
+                            <option value="google">Google</option>
+                            <option value="facebook">Facebook</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100" align="right">備註:</td>
+                    <td>
+                        <textarea name="memo" rows="5" cols="30" placeholder="請輸入備註"></textarea>
+                        <!-- textarea是多行文字輸入框 -->
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr align="center">
+                    <td colspan="2">
+                        <hr>
+                        <input type="reset" value="清除">
+                        <input type="submit" value="送出">
+                        <button>送出button</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+
+    <hr>
+    <a href="https://www.google.com/"><button>Google</button></a>
+    <button>導向送出</button>
+    
+</body>
+
+</html>
