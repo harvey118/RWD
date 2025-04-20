@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* nav的後代用空格 */
+        nav h6,
+        nav p {
+            color: red;
+        }
+
+        /* nav的子元素用箭頭 */
+        nav>p {
+            color: blue;
+        }
+
+        h6.lightblue {
+            color: lightblue;
+        }
+
+        #loki.lightcoral {/*同行*/
+            color: lightcoral;
+        }
+
+        #harvey .lightcoral {/*不同行*/
+            color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h6>hello world</h6>
+    <h6 id="loki" class="lightcoral">hello world</h6>
+    <h6 class="lightblue">hello world</h6>
+    <p class="lightblue">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <hr>
+    <nav>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div id="harvey">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <h6 class="lightcoral">hello world</h6>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>

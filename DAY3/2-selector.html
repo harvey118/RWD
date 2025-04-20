@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: tomato;
+        }
+        .R {
+            background-color: tomato;
+        }
+        .G {
+            color: green;
+        }
+        h1 {
+            color: blue;
+        }
+        .menu {
+            color: salmon;
+        }
+        #harvey {
+            background-color: rgb(209, 27, 209);
+            color: white;
+            font-size: 24px;
+        }
+
+        .primary {
+            color: #0b57a5;
+        }
+        .RR {
+            color: red !important; /* 這個樣式優先權最高，會覆蓋掉其他樣式 */ /*盡量不使用*/
+            /*對比 class="primary" 下面的這行*/
+            /*<li class="RR" id="GG" style="color: blue">003</li>  <!-- 此行style的優先權最高 -->*/
+            /*反制的手法，對方再另外使用<!important> */
+        }
+        #GG {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="R">hello world</h1>
+    <h1 class="G">hello world</h1>
+    <h1>hello world</h1>
+    <p class="R">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, commodi!</p>
+    <hr>
+    <ul class="menu">
+        <li>001</li>
+        <li class="G R">002</li> <!-- G樣式外加另外套用R樣式 -->
+        <li class="H" id="harvey">003</li>
+    </ul>
+    <hr>
+    <ul class="primary">
+        <li class="RR">001</li>
+        <li class="RR">002</li>
+        <li class="RR" id="GG" style="color: blue">003</li>  <!-- 此行style的優先權最高 -->
+    </ul>
+</body>
+
+</html>

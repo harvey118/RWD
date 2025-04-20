@@ -1,0 +1,10 @@
+/* 外部樣式表 優先權次高 */
+/* HTML透過<link>標籤引入CSS樣式表 */
+
+/* 使用import拆分CSS的做法 */
+/* @import url('1-style.css'); */
+
+h2 {
+    color: rebeccapurple;
+    padding: 10px;
+}

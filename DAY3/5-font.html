@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            color: lightcoral;
+            /* font-family: "Arial", "Microsoft Jhenghei", sans-serif; */
+            font-family: "Noto Sans TC", "Roboto", sans-serif;
+            /* 這個字型會被優先使用，沒有的話就用後面的字型 */
+            /* font-family: 'Noto Sans TC', sans-serif; */
+            /* font-family: 'Roboto', sans-serif; */
+
+        }
+
+        .tw {
+            /*font-size: 16px;*/
+            /*px等於解析度或可用pt，絕對值*/
+            /*font-size: 1em;*/
+            /*em是一個瀏覽器指定的單位ex.16px，故1em=16px，但做巢狀會很危險*/
+            font-size: 1rem;
+            /*rem是一個瀏覽器指定的單位ex.16px，故1rem=16px*/
+            font-style: italic;
+        }
+
+        .en {
+            /* text-decoration: underline overline; */
+            text-align: left;
+        }
+
+        .case {
+            text-shadow: 1px 2px 2px #000, -2px -2px 2px #ff00b5;
+        }
+        .case2 {
+            letter-spacing: 12px;
+        }
+
+        .over {
+            white-space: nowrap;    /*不換行 */
+            overflow: auto;
+        }
+        .over2 {   /*文字太長，尾段會加入...*/
+            display: -webkit-box;   /* -webkit-實驗性階段屬性 */
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="over">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, commodi!</h1>
+    <hr>
+    <h1 class="over2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, commodi!</h1>
+    <hr>
+    <div>
+        <span style="font-size: 1rem">font</span>
+        <div>
+            <span style="font-size: 2rem">font</span>
+            <div>
+                <span style="font-size: 3rem">font</span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div style="font-size: 1em">
+        <span>font</span>
+        <div style="font-size: 2em">
+            <span>font</span>
+            <div style="font-size: 3em"> <!-- 32px * 3 = 96px -->
+                <span>font</span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <span class="en"><span class="case">Lorem</span> ipsum dolor, sit amet consectetur adipisicing elit. At earum cumque, laboriosam <span class="case2">dicta</span> delectus odit. Aliquam assumenda, ut quaerat neque, unde illum est maxime adipisci voluptatum repellat a. Placeat numquam consequatur modi omnis, quaerat nulla illo obcaecati tempora sed officiis. Temporibus molestias, modi incidunt facilis reprehenderit simus a maxime voluptate.</span>
+    <hr>
+    <p class="tw">課程盯着財務關閉打造，兄弟大多數比例代表尋求，加拿大什麼加強航空，外資研究所原理笑道贏得領先寬頻希望實踐登陸，找到至少統計細胞是我體力成為我把狀況情節，仍然設施阿摩斯彼此農村男子運作不能用戶名著名是。
+    </p>
+</body>
+
+</html>

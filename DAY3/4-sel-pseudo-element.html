@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>偽元素</title>
+    <style>
+        nav {
+            color: red;
+        }
+        /* 這個是偽元素，會在div的前面加一個元素 */
+        nav::before {
+            content: " ";
+            background-color: plum;
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            transform: scale(0.5) rotate(45deg) translateY(50%);
+        }
+        /* 這是偽元素，會在div的後面加一個元素 */
+        nav::after {
+            padding-left: 5px;
+            content: "after";
+            color: lightgreen;
+        }
+
+        .demo {
+            color: lightseagreen;
+            font-size: 5rem;
+            padding: 20px;
+            text-align: center;
+            margin: 50px auto;
+        }
+        .demo::before {
+            content: "Harvey";
+            color: lightcoral;
+            position: absolute;
+            transform: scaleY(-1) translateY(-60%);
+        }
+        .demo::after {
+            content: "";
+            color: lightcoral;
+            position: absolute;
+            transform: scaleY(-1) translateY(60%);
+        }
+
+        .demo3::first-letter {
+            color: lightseagreen;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .demo3::selection {
+            background-color: lightcoral;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo">Harvey</div>
+    <hr>
+    <nav class="demo2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</nav>
+    <hr>
+    <p class="demo3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic id fugit dolorum labore facere magnam delectus. Delectus, atque doloremque totam cum quia consequatur nisi dolore cumque illum, reiciendis ratione maiores cupiditate voluptatibus? In tempora ipsam dolores libero nisi at exercitationem quidem voluptates repudiandae. Ad ipsum corrupti culpa expedita, incidunt quod?
+    </p>
+</body>
+
+</html>

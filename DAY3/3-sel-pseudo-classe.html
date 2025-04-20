@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>偽類選擇</title>
+    <style>
+        a {
+            color: palevioletred;
+        }
+
+        a:link {
+            color: gray;
+        }
+
+        a:visited {
+            color: blue;
+        }
+
+        a:hover {
+            color: green;
+        }
+
+        a:active {
+            color: tomato;
+        }
+
+        h1:hover {
+            color: red;
+        }
+
+        table.dome tr.odd {
+            /* <table border="1" width="300" cellspacing="0" class="dome"> */
+            /*table與dome同一行不使用空格，tr是下一層所以加空格*/
+            background-color: lightcoral;
+        }
+
+        /* 偽類:否定選擇 */
+        table.dome tr:not(.odd) {
+            /*除了odd，其他全都要*/
+            background-color: lightblue;
+        }
+
+        table.dome2 tr {
+            background-color: lightcoral;
+        }
+
+        /* or */
+        table.dome2 tr:nth-child(even) {
+            /*偶數排加顏色*/
+            background-color: lightcoral;
+        }
+
+        /* 偽類:關係選擇 */
+        table.dome2 tr:nth-child(odd) {
+            /*基數排加顏色*/
+            background-color: lightblue;
+        }
+
+
+        /* 三色表格 */
+        table.dome2 tr:nth-child(3n) {
+            /*基數排加顏色*/
+            background-color: lightblue;
+        }
+        table.dome2 tr:nth-child(3n+1) {
+            /*基數排加顏色*/
+            background-color: lightgreen;
+        }
+        table.dome2 tr:nth-child(3n+2) {
+            /*基數排加顏色*/
+            background-color: lightpink;
+        }
+
+
+        h3:nth-child(2n) {
+            background-color: lightcoral;
+        }
+        h3:nth-last-child(1) {
+            background-color: lightblue;
+        }
+
+        /* 偽類:has 指定該元素持有的後代元素 */
+        .demo4 section:has(h2) {
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        input:hover {   /*游標移動到*/
+            background-color: lightblue;
+        }
+        input:focus {   /*游標點取到*/
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="請輸入文字" id="input1">
+    <hr>
+    <div class="demo4">
+        <section>
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+        </section>
+        <section>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+        </section>
+    </div>
+    <hr>
+    <div class="demo3">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <h3> h3 Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+        <h3> h3 Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <h3> h3 Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+        <h3> h3 Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+        <h3> h3 Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
+    </div>
+    <table border="1" width="300" cellspacing="0" class="dome2">
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>001</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>002</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>003</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>004</td>
+            </tr> 
+            <tr>
+                <td>005</td>
+                <td>005</td>
+            </tr>
+            <tr>
+                <td>006</td>
+                <td>006</td>
+            </tr>
+            <tr>
+                <td>007</td>
+                <td>007</td>
+            </tr>
+            <tr>
+                <td>008</td>
+                <td>008</td>
+            </tr>
+            <tr>
+                <td>009</td>
+                <td>009</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table border="1" width="300" cellspacing="0" class="dome">
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>001</td>
+            </tr>
+            <tr class="odd">
+                <td>002</td>
+                <td>002</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>003</td>
+            </tr>
+            <tr class="odd">
+                <td>004</td>
+                <td>004</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+    <hr>
+    <a href="https://www.google.com">Google</a>
+    <a class="loki" href="https://www.google.com">Google Loki</a>
+</body>
+
+</html>

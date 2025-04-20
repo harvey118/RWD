@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <link rel="stylesheet" href="1-style.css">
+    <style>
+        /* 放在head裡的style標籤裡面 */
+        /* 在這裡寫CSS的樣式表 */
+        /* 頁首宣告 優先權第三高，但愈下面越高*/
+        h1, h2 {
+            color: black;
+            font-size: 30px;
+            background-color: tomato;
+        }
+        h4 {
+            font-size: 40px;
+            background-color: white;
+            color: rgba(255, 0, 0, 50%);
+            color: #0b57a5;
+        }
+        p {
+            color: blue;
+            /* text-align: center; */
+        }
+    </style>
+    <style>
+        h1 {
+            padding: 30px;
+        }
+        h3 {
+            /* 關鍵字 */
+            color: yellow;
+            /* RGB顏色值 */
+            color: rgb(255, 255, 0);
+            /* HEX顏色值 */
+            color: #FFFF00;
+            color: #e07;
+            /* HSL顏色值 */
+            color: hsl(0, 94%, 49%);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 行內宣告 優先權最高 -->
+    <h1 style="color: blue;">hello world</h1>
+    <h2>hello world</h2>
+    <h3>hello world</h3>
+    <h4>hello world</h4>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, voluptatem, omnis quod unde cumque minima quasi
+        totam odit optio facere accusamus. Fuga eius sunt in iure soluta minima autem vel.</p>
+</body>
+
+</html>
