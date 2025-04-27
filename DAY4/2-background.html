@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo1 {
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            background-image: url('https://fakeimg.pl/100x100/');
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-position: 50% 50%;
+        }
+
+        .demo2 {
+            width: 300px;
+            height: 300px;
+            background-color: lightsalmon;
+            /* 兩個屬性, 請用逗號 */
+            background-image: url('https://picsum.photos/100/100/?random=10'),
+                url('https://picsum.photos/100/100/?random=10');
+            background-repeat: no-repeat, no-repeat;
+            background-position: right bottom, left top;
+        }
+
+        .demo3 {
+            width: 300px;
+            height: 300px;
+            /* 兩個屬性, 請用逗號 */
+            background: url('https://picsum.photos/100/100/?random=10') no-repeat right bottom,
+                url('https://picsum.photos/100/100/?random=10') no-repeat left bottom, lightpink;
+        }
+
+        .demo4 {
+            width: 300px;
+            height: 300px;
+            /* 漸層顏色 */ /* https://cssgradient.io/ */ /* 漸層產生網 */
+            background-image: linear-gradient(90deg,rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1));
+        }
+
+        .demo5 {
+            width: 300px;
+            height: 300px;
+            background-image: 
+            linear-gradient(165deg, #53a329, transparent 70%),
+            linear-gradient(255deg, #b54889, transparent 70%),
+            linear-gradient(345deg, #2a7b9b, transparent 70%),
+            linear-gradient(75deg,  #eddd53, transparent 70%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo5"></div>
+    <div class="demo4"></div>
+    <div class="demo3"></div>
+    <div class="demo2"></div>
+    <div class="demo1"></div>
+</body>
+
+</html>

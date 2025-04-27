@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul.demo1 {
+            list-style-type: decimal;       /* 取消圓點 改數字 */
+            list-style-position: inside;    /* 數字在內側 */
+        }
+
+        ol.demo2 {
+            list-style-type: disc;  /* 取消數字 改圓點 */
+        }
+
+        ol.demo3 {  /*SASS巢狀迴圈寫法*/
+            list-style-type: none;
+            padding-left: 15px;
+            li {
+                &::before { /* 這是 SASS 語法 */
+                    content: ''; /* 圓點 */
+                    display: inline-block; /* 讓它變成區塊元素 */
+                    width: 12px; /* 大小 */
+                    height: 12px; /* 大小 */
+                    font-size: 1.5rem; /* 大小 */
+                    vertical-align: baseline; /* 垂直置中 */
+                    border-radius: 50%; /* 圓形 */
+                    margin-right: 0.5rem; /* 右邊距 */
+                }
+                &[data-status="red"]::before { /* 這是 SASS 語法 */
+                    background: red;
+                }
+                &[data-status="green"]::before { /* 這是 SASS 語法 */
+                    background: green;
+                }
+            }
+        }
+
+        ul.demo4 {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0;   /*讓文字不顯示*/
+
+            li {
+                display: inline-block; /* 讓它變成區塊元素 */
+                background: lightcoral;
+                width: 100px;
+                height: 50px;
+                text-align: center; /* 文字水平置中 */
+                line-height: 50px; /* 文字垂直置中 */
+                font-size: 1rem; /* 取消掉中間的空隙 第45行 */
+                a {
+                    text-decoration: none; /* 取消底線 */
+                    color: #FFF; /* 文字顏色 */
+
+                    &:hover {
+                        color: #000; /* 文字顏色 */
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="demo1">
+        <li>001AAAA</li>
+        <li>002AAAA</li>
+        <li>003AAAA</li>
+        <li>004AAAA</li>
+    </ul>
+    <ol class="demo2">
+        <li>001BBBB</li>
+        <li>002BBBB</li>
+        <li>003BBBB</li>
+        <li>004BBBB</li>
+    </ol>
+    <ol class="demo3">
+        <li data-status="red">001CCCC</li>
+        <li data-status="green">002CCCC</li>
+        <li data-status="red">003CCCC</li>
+        <li data-status="green">004CCCC</li>
+    </ol>
+    <ul class="demo4">
+        <li><a href="#">001DDDD</a></li>
+        <li><a href="#">002DDDD</a></li>
+        <li><a href="#">003DDDD</a></li>
+        <li><a href="#">004DDDD</a></li>
+    </ul>
+</body>
+
+</html>
