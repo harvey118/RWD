@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex-container {
+            background: tomato;
+            display: flex;
+            height: 300px;
+            flex-direction: row;    /*row叫做主軸，column叫做交叉軸*/
+            justify-content: flex-start; /*主軸對齊方式*/
+            align-items: center;    /*交軸對齊方式*/
+            /*flex-wrap: wrap; /*換行*/
+
+            flex-flow: wrap; /*主軸對齊方式 + 換行*/
+            align-content: space-evenly; /*交軸對齊方式*/
+            gap: 15px; /*主軸間距*/
+        }
+        .flex-item {
+            background: lightblue;
+            width: 100px;
+            border: 1px solid #000;
+        }
+        .special-item {
+            align-self: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="flex-container">
+        <div class="flex-item">AAAAAAAA AAAAAAAA AAAAAAAA</div>
+        <div class="flex-item">B</div>
+        <div class="flex-item">C</div>
+        <div class="flex-item special-item">C</div>
+        <div class="flex-item">C</div>
+        <div class="flex-item">C</div>
+        <div class="flex-item">C</div>
+        <div class="flex-item">C</div>
+    </section>
+</body>
+
+</html>

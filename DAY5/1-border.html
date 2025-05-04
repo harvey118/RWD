@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blk {
+            width: 100px;
+            height: 100px;
+            background: lightgoldenrodyellow;
+            border: 10px solid black;
+            border-bottom-color: red;
+            border-right-color: blue;
+
+            border-width: 1px 2px 3px;
+            border-style: dashed solid dotted;
+            border-right: 10px solid black;
+        }
+
+        .inline {
+            border: 1px solid black;
+        }
+
+        .br {
+            width: 100px;
+            height: 100px;
+            background: lightgreen;
+            margin: 25px auto;
+            border: 5px solid black;
+            border-radius: 19% 100% 18% 100% / 24% 100% 10% 100%;
+            background-image: linear-gradient(-225deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 40%, rgba(0, 255, 255, 0) 60%, #0ff 100%), linear-gradient(45deg, #3023AE 0%, #FF0099 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="br">Lorem</div>
+    <hr>
+    <div class="blk">
+        <span class="inline">hello</span>
+    </div>
+
+</body>
+
+</html>
