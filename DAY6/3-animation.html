@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #333;
+            color: white;
+            height: 100vh;
+            /* 畫面的版面高度 用vh單位*/
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .base {
+            width: 100px;
+            height: 100px;
+            background: lightcoral;
+            position: relative;
+            /*animation-name: mymove;*/
+            /* 動畫名稱 */
+            /*animation-duration: 4s;*/
+            /* 動畫持續時間 */
+
+            animation: mymove 3s linear infinite;
+            /* 動畫名稱 持續時間 無限循環 交替播放 */
+
+            /*
+            animation-name: name;		動畫名稱	
+            animation-duration:	1s;	    持續時間	            *s（秒）, *ms（毫秒）
+            animation-timing-function:	ease;	速度曲線	    ease, linear, ease-in, ease-out, ease-in-out
+            animation-delay:    1s;	    延遲時間	            *s（秒）, *ms（毫秒）
+            animation-iteration-count:  0;		動畫播放次數	數字或 infinite。
+            animation-direction:  normal;	動畫播放方向	    normal, reverse, alternate, alternate-reverse。
+            animation-fill-mode:  none;	    動畫播放前後模式	none, forwards, backwards, both。
+            animation-play-state: running;	動畫播放或暫停狀態
+            */
+        }
+
+        @keyframes mymove {
+            from {
+                background: lightcoral;
+                left: -300px;
+            }
+
+            /*25% {
+                background: blueviolet;
+                left: 500px;
+            }*/
+            50% {
+                background: lightcoral;
+                left: 300px;
+            }
+
+            /*75% {
+                background: blueviolet;
+                left: 500px;
+            }*/
+            to {
+                background: lightcoral;
+                left: -300px;
+            }
+        }
+
+
+        .button {
+            width: 100px;
+            height: 50px;
+            background: orange;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+
+            &::before {
+                content: '';
+                background-color: #333;
+                position: absolute;
+                width: 300%;
+                height: 300%;
+                background: linear-gradient(145deg, transparent 45%, #fff9 50%, transparent 55%);
+                transform: translate(calc(-100% / 3));
+                animation: mymove2 1.5s cubic-bezier(0.2, 0.81, 0.77, 0.28) infinite;
+            }
+        }
+
+        @keyframes mymove2 {
+            from {
+                left: -150%;
+            }
+
+            to {
+                left: 150px;
+            }
+        }
+
+        .loading {
+            position: relative;
+            /* animation: mymove3 1s infinite; */
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 300px;
+                border: 1px solid #FFF;
+                bottom: 20px;
+                left: -130px;
+                height: 20px;
+                background-color: #333;
+            }
+
+            &::after {
+                background: white;
+                animation: mymove3 5s infinite;
+            }
+
+        }
+
+        /*@keyframes mymove3 {
+            from {
+                width: 0px;
+            }
+
+            to {
+                width: 300px;
+            }
+        }*/
+
+        @keyframes mymove3 {
+            0%,
+            20% {
+                width: 0px;
+            }
+
+            35%,
+            85% {
+                background-color: lightgreen;
+            }
+
+            50% {
+                background-color: lightcoral;
+            }
+
+            100% {
+                width: 300px;
+                background-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="base">HELLO</div>
+    <div class="button">Button</div>
+    <div class="loading">Loading</div>
+</body>
+
+</html>

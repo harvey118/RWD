@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;  /* 畫面的版面高度 用vh單位*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+
+            color: blanchedalmond;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.before {
+                background-color: lightcoral;
+            }
+
+            &.after {
+                background-color: lightblue;
+                /* transform: translate(50px, 50px); */
+                /* 或使用下方的寫法 */
+                transform: translateX(75px) translateY(25px);
+            }
+
+            &.before1 {
+                margin: 5px;
+                background-color: lightcoral;
+            }
+
+            &.after1 {
+                background-color: lightblue;
+                /*transform: scale(-1.3);*/  /* 反轉X軸 */
+                transform: rotate(45deg);  /* 旋轉45度 */
+                transform-origin: left bottom;  /* 旋轉的中心點 */
+            }
+
+            &.before2 {
+                background-color: lightcoral;
+            }
+
+            &.after2 {
+                background-color: lightblue;
+                transform: skew(45deg, 0deg);  /* 斜切變形 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box before">Before</div>
+    <div class="box after">After</div>
+    <div class="box before">Before</div>
+
+    <div class="box before1">Before</div>
+    <div class="box after1">After</div>
+    <div class="box before1">Before</div>
+
+    <div class="box before2">Before</div>
+    <div class="box after2">After</div>
+    <div class="box before2">Before</div>
+</body>
+
+
+</html>

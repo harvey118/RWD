@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;  /* 畫面的版面高度 用vh單位*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+
+            color: blanchedalmond;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.before {
+                background-color: lightcoral;
+            }
+            
+            &.after {
+                background-color: lightblue;
+                transition: all 3s 0s ease; /* 讓所有的變化都有過渡效果 */
+            
+                &:hover {
+                    background-color: blueviolet;
+                    transform: translateX(75px) translateY(75px) rotate(90deg);
+                    font-size: 2rem;
+                    /*opacity: 0;*/ /* 讓透明度變化也有過渡效果 */
+                }
+            }
+
+            &.before1 {
+                margin: 5px;
+                background-color: lightcoral;
+            }
+
+            &.after1 {
+                background-color: lightblue;
+                /* 優先寫法順序 */
+                transition-property: all; /* 套用CSS屬性 */
+                transition-duration: 3s; /* 持續時間 */
+                transition-delay: 0.5s; /* 延遲時間 */
+                transition-timing-function: ease-in-out; /* 速度曲線(線性 緩進) */
+
+                transition: all 1s 0s ease-in;
+
+                &:active {
+                    background-color: blueviolet;
+                    width: 1500px;
+                    font-size: 3rem;
+                }
+            }
+
+            &.before2 {
+                margin: 5px;
+                background-color: lightcoral;
+            }
+
+            &.after2 {
+                margin: 5px;
+                background-color: lightblue;
+            }
+
+            &.mulit {
+                background-color: lightcoral;
+                position: relative;
+                transition: all 3s;
+
+                &::after{
+                    content: 'Loki';
+                    display:  flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: blueviolet;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 2rem;
+                    
+                    transition: opacity 0.5s, top 0.5s, transform 0.5s 1s;
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                }
+
+                &:hover::after {
+                    transform-origin: right bottom;
+                    opacity: 1;
+                    top: 100%;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box before">Before</div>
+    <div class="box after">After</div>
+    <div class="box before">Before</div>
+
+    <div class="box before1">Before</div>
+    <div class="box after1">After</div>
+    <div class="box before1">Before</div>
+
+    <div class="box before2">Before</div>
+    <div class="box after2">After</div>
+    <div class="box mulit">Before</div>
+</body>
+
+
+</html>
