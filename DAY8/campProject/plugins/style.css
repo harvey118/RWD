@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: 'Roboto', 'Noto Sans TC', 'Open Sans', sans-serif;
+    background: #eee;
+}
+
+#harveySlider {
+    
+    img {
+        filter: grayscale(50%) sepia(50%);  /* 調暗圖片亮度 */
+    }
+}

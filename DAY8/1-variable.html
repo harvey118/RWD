@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --main-color: lightcoral;
+        }
+        /* :root 代表全域變數，這裡定義了一個名為 --main-color 的變數 */
+        /* 變數名稱以兩個連字號（--）開頭，這是 CSS 變數的語法規則 */
+        /* 變數可以在整個文檔中使用，並且可以在任何地方被引用 */
+        /* 變數可以用於任何 CSS 屬性中，這樣可以方便地統一管理顏色、字體等樣式 */
+        /* 這樣做的好處是，如果需要更改主色調，只需修改變數的值，而不需要逐一修改所有使用該顏色的地方 */
+        /* 這樣可以提高代碼的可維護性和可讀性 */
+
+        body {
+            margin: 0;
+        }
+
+        div {
+            /* background-color: tomato; */
+            /*直接寫色碼*/
+            background-color: var(--main-color);
+            /*使用變數*/
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
