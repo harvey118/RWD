@@ -1,13 +1,110 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+    --harvey-dark: #282c34;
+    --harvey-light: #eee;
+}
+
 body {
     font-family: 'Roboto', 'Noto Sans TC', 'Open Sans', sans-serif;
-    background: #eee;
+    background: var(--harvey-dark);
+    color: var(--harvey-light);
+}
+
+#harveyMenu {
+    background-color: #351445;
+    --bs--gradient: linear-gradient(235deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
+    z-index: 9999;
+
+    img {
+        width: 25px;
+    }
+
+    /* .active {
+        color: red;
+        background: white;
+    } */
 }
 
 #harveySlider {
-    
+    .carousel-indicators {
+        button {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+        }
+    }
+
     img {
-        filter: grayscale(50%) sepia(50%);  /* 調暗圖片亮度 */
+        filter: grayscale(50%) sepia(50%);
+        /* 調暗圖片亮度 */
+    }
+
+    button i {
+        /* background: #000; */
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+
+        &.fa-square-caret-left,
+        &.fa-square-caret-right {
+            font-size: 3rem;
+        }
+
+        &.fa-square-fa-arrow-left,
+        &.fa-square-fa-arrow-right {
+            font-size: 1.5rem;
+        }
+    }
+
+    .carousel-caption {
+        padding-bottom: 135px;
+        z-index: 1;
+
+        h2 {
+            background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(180deg, var(--harvey-dark) 35%, var(--harvey-light) 50%);
+        }
+    }
+
+    .carousel-item {
+        padding-bottom: 250px;
+        background: var(--harvey-dark);
+    }
+
+}
+
+
+@media (min-width: 768px) {
+    #harveyPallet {
+        article {
+            padding-top: 280px;
+
+            .col:nth-child(odd) {
+                transform: translateY(-50px);
+                padding-bottom: 150px;
+            }
+        }
+
+        .card-img-overlay {
+            transform: scale(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card-img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+
+        .card:hover {
+            .card-img-overlay {
+                transform: scale(1);
+            }
+
+            .card-img {
+                transform: scale(1.2);
+            }
+        }
     }
 }
