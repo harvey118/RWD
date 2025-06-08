@@ -20,10 +20,30 @@ body {
         width: 25px;
     }
 
-    /* .active {
-        color: red;
-        background: white;
-    } */
+    .nav-link {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            background-color: white;
+            width: 0%;
+            height: 2px;
+            transition: width 0.5s ease-in-out;
+        }
+
+        &:hover::after,
+        &.active::after {
+            width: 100%;
+        }
+
+        /* .active {
+            color: red;
+            background: white;
+        } */
+    }
 }
 
 #harveySlider {
@@ -64,7 +84,7 @@ body {
         h2 {
             background-clip: text;
             color: transparent;
-            background-image: linear-gradient(180deg, var(--harvey-dark) 35%, var(--harvey-light) 50%);
+            background-image: linear-gradient(180deg, var(--harvey-light) 50%, var(--harvey-light) 50%);
         }
     }
 
@@ -73,6 +93,16 @@ body {
         background: var(--harvey-dark);
     }
 
+}
+
+#harveyPark {
+    background: url("https://picsum.photos/1920/1200/?random=10") #3338 no-repeat center/cover fixed;
+    background-blend-mode: lighten;
+}
+
+#harveyService {
+    background: url("https://picsum.photos/1920/1200/?random=10") #3338 no-repeat center/cover fixed;
+    background-blend-mode: overlay;
 }
 
 
@@ -104,6 +134,26 @@ body {
 
             .card-img {
                 transform: scale(1.2);
+            }
+        }
+    }
+
+    #harveyPark {
+        .col {
+            transition: transform 0.3s;
+
+            .card-img {
+                filter: brightness(0.7);
+                transition: filter 0.3s;
+            }
+
+            &:hover {
+                z-index: 10;
+                transform: scale(1.2);
+
+                .card-img {
+                    filter: brightness(1);
+                }
             }
         }
     }
